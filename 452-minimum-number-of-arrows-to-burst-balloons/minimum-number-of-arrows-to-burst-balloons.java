@@ -4,9 +4,9 @@ class Solution {
         int count=1;
         int n=points.length;
         
-        System.out.println(points[0][0]+""+points[0][1]);
+        // System.out.println(points[0][0]+""+points[0][1]);
         int currEnd=points[0][1];
-        System.out.println(currEnd);
+        // System.out.println(currEnd);
         for(int i=0;i<n;i++){
             if(points[i][0]>currEnd){
                 count++;
