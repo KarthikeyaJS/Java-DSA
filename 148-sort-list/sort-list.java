@@ -16,7 +16,13 @@ class Solution {
             list.add(curr.val);
             curr=curr.next;
         }
-        Collections.sort(list);
+        Thread t1=new Thread(()->Collections.sort(list));
+        t1.start();
+        try{
+            t1.join();
+        }
+        catch(Exception e){}
+
         curr=head;
         int i=0;
         while(curr!=null){
