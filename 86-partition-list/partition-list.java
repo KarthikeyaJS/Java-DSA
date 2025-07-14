@@ -17,17 +17,18 @@ class Solution {
         ListNode greatCurr=great;
         while(curr!=null){
             if(curr.val<x){
-                lessCurr.next=new ListNode(curr.val);
+                lessCurr.next=curr;
                 curr=curr.next;
                 lessCurr=lessCurr.next;
             }
             else{
-                greatCurr.next=new ListNode(curr.val);
+                greatCurr.next=curr;
                 curr=curr.next;
                 greatCurr=greatCurr.next;
             }
         }
         lessCurr.next=great.next;
+        greatCurr.next=null;
         return less.next;
     }
 }
