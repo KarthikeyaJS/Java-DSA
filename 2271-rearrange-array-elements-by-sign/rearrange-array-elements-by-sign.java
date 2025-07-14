@@ -13,6 +13,7 @@ class Solution {
                 neg+=2;
             }
         }
+        System.gc();
         return arr;
     }
 }
