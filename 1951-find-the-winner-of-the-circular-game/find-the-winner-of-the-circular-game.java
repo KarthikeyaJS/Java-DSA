@@ -1,10 +1,10 @@
 class Solution {
-    static int helper(int n,int k){
-        if(n==1)    return 0;
-        return (helper(n-1,k)+k)%n;
-    }
     public int findTheWinner(int n, int k) {
-        int ind=helper(n,k);
-        return ind+1;
+        if(n==1)    return 1;
+        int idx=0;
+        for(int i=2;i<=n;i++){
+            idx=(idx+k)%i;
+        }
+        return idx+1;
     }
 }
