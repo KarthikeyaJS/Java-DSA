@@ -7,9 +7,10 @@ class Solution {
         }
 
         Arrays.sort(heights);
+        String[] res=new String[n];
         for(int i=0;i<n;i++){
-            names[i]=map.get(heights[n-i-1]);
+            res[i]=map.get(heights[n-i-1]);
         }
-        return names;
+        return res;
     }
 }
