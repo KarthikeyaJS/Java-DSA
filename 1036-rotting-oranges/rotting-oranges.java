@@ -1,9 +1,9 @@
 class Solution {
 
-    public int orangesRotting(int[][] grid) {
-        int m=grid.length;
-        int n=grid[0].length;
-        int[][] visited=grid;
+    public int orangesRotting(int[][] visited) {
+        int m=visited.length;
+        int n=visited[0].length;
+        // int[][] visited=grid;
         Queue<int[]> q=new LinkedList<>();
         int countFresh=0;
         for(int i=0;i<m;i++){
