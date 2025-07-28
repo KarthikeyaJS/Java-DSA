@@ -1,23 +1,16 @@
 class Solution {
     public int[] occurrencesOfElement(int[] nums, int[] queries, int x) {
-        HashMap<Integer,Integer> map=new HashMap<>();
-        int occ=0;
-        int n=nums.length;
+        int count=0;
+        for(int i:nums) if(i==x)    count++;
+        int[] pos=new int[count];
+        int p=0;
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]==x)  pos[p++]=i;
+        }
+        int n=queries.length;
         for(int i=0;i<n;i++){
-            if(nums[i]==x){
-                map.put(++occ,i);
-            }
+            queries[i]=(queries[i]<=count)?pos[queries[i]-1]  :-1;
         }
-        int m=queries.length;
-        int[] res=new int[m];
-        for(int i=0;i<m;i++){
-            if(map.containsKey(queries[i])){
-                res[i]=map.get(queries[i]);
-            }
-            else{
-                res[i]=-1;
-            }
-        }
-        return res;
+        return queries;
     }
 }
