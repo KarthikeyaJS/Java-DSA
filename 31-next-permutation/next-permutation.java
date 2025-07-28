@@ -15,7 +15,7 @@ class Solution {
             i--;
         }
         if(i<0){
-            Arrays.sort(nums);
+            rev(nums,0,n-1);
             return;
         }
         int j=n-1;
