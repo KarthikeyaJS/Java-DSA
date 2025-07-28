@@ -1,4 +1,12 @@
 class Solution {
+    static void rev(int[] nums,int left,int right){
+        while(left<=right){
+            nums[left]=nums[left]+nums[right]-(nums[right]=nums[left]);
+            left++;
+            right--;
+        }
+
+    }
     public void nextPermutation(int[] nums) {
         int n=nums.length;
         int i=n-2;
@@ -16,7 +24,8 @@ class Solution {
         }
 
         nums[i]=nums[i]+nums[j]-(nums[j]=nums[i]);
-        Arrays.sort(nums,i+1,n);
+
+        rev(nums,i+1,n-1);
         
     }
 }
