@@ -1,13 +1,31 @@
 class Solution {
-    static String sortedString(int x){
-        char[] arr=String.valueOf(x).toCharArray();
-        Arrays.sort(arr);
-        return new String(arr);
+    static int[] getDigitCount(int num){
+        int[] count=new int[10];
+        while(num>0){
+            int dig=num%10;
+            count[dig]++;
+            num=num/10;
+        }
+        return count;
+    }
+
+    static boolean isEqual(int[] arr1,int[] arr2){
+        for(int i=0;i<10;i++){
+            if(arr1[i]!=arr2[i]){
+                return false;
+            }
+        }
+        return true;
     }
     public boolean reorderedPowerOf2(int n) {
-        String target=sortedString(n);
+        int[] count=getDigitCount(n);
+        int pow=1;
         for(int i=0;i<31;i++){
-            if(sortedString(1<<i).equals(target))   return true;
+            int[] countOfPow=getDigitCount(pow);
+            if(isEqual(count,countOfPow)){
+                return true;
+            }
+            pow=pow*2;
         }
         return false;
     }
