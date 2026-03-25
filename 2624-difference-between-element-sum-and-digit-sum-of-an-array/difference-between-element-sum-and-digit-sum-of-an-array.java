@@ -12,8 +12,6 @@ class Solution {
         int digSum=0;
         for(int i:nums){
             eleSum=eleSum+i;
-        }
-        for(int i:nums){
             digSum=digSum+func(i);
         }
         return Math.abs(digSum-eleSum);
