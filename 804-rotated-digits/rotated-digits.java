@@ -1,34 +1,35 @@
+//main condition->if 3,4,7 return false;
+//->remaining all numbers are valid
+//->to be diff from x->
+
+//  2   5 6   9
+
+//88828->88858
+
+//1000->10005
+
+//1801809->1801806
+
+//3222
+
 class Solution {
-    static boolean has347(int n){
+    static boolean isValid(int n){
+        boolean found=false;
         while(n>0){
             int x=n%10;
-            if(x==3||x==4||x==7)    return true;
+            if(x==3||x==4||x==7)    return false;
+            if(x==2||x==5||x==6||x==9)  found=true;
             n=n/10;
         }
-        return false;
-    }
-    static int rotate(int n){
-        int newNo=0;
-        int pow=1;
-        while(n>0){
-            int x=n%10;
-            if(x==2)    x=5;
-            else if(x==5)    x=2;
-            else if(x==6)    x=9;
-            else if(x==9)    x=6;
-            newNo=(pow*x)+newNo;
-            n=n/10;
-            pow=pow*10;
-        }
-        System.out.println(newNo);
-        return newNo;
+        return found;
+
     }
     public int rotatedDigits(int n) {
         int count=0;
         for(int i=0;i<=n;i++){
-            if(has347(i))   continue;
-            if(i!=rotate(i))    count++;
+            if(isValid(i))  count++;
         }
         return count;
     }
 }
+
