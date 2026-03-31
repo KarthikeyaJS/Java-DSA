@@ -1,8 +1,7 @@
-
 class Solution {
     public int[] searchRange(int[] nums, int target) {
-        int[] res={-1,-1};
         int left=0;
+        int[] res={-1,-1};
         int right=nums.length-1;
         while(left<=right){
             int mid=left+(right-left)/2;
@@ -17,7 +16,6 @@ class Solution {
                 res[0]=i+1;
                 res[1]=j-1;
                 return res;
-
             }
             else if(nums[mid]>target){
                 right=mid-1;
