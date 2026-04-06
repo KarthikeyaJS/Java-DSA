@@ -8,7 +8,7 @@ class Solution {
             maxi=Math.max(maxi,w.length());
         }
         for(int i=1;i<=n;i++){
-            for(int j=i-1;j>=Math.max(i-maxi,0);j--){
+            for(int j=i-1;j>=Math.max(i-maxi-1,0);j--){
                 if(dp[j] && wordDict.contains(s.substring(j,i))){
                     dp[i]=true;
                     break;
