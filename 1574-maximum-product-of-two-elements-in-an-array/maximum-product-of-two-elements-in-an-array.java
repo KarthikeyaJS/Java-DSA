@@ -11,6 +11,7 @@ class Solution {
                 max2=i;
             }
         }
+
         return (max1-1)*(max2-1);
     }
 }
