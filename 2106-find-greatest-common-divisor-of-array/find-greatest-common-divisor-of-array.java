@@ -7,10 +7,9 @@ class Solution {
         int mini=Integer.MAX_VALUE;
         int maxi=Integer.MIN_VALUE;
         for(int i:nums){
-            maxi=Math.max(maxi,i);
+            maxi=Math.max(i,maxi);
             mini=Math.min(mini,i);
         }
-
         return gcd(maxi,mini);
     }
 }
