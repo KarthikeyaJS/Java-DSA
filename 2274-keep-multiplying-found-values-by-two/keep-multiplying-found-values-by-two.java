@@ -3,7 +3,7 @@ class Solution {
         HashSet<Integer> set=new HashSet<>();
         for(int i:nums){
             set.add(i);
-        }
+        }   
         while(true){
             if(set.contains(original)){
                 original=original*2;
@@ -13,5 +13,6 @@ class Solution {
             }
         }
         return original;
+        
     }
 }
