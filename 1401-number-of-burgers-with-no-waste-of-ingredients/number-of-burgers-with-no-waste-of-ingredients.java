@@ -5,15 +5,12 @@ class Solution {
             return list;
         if(cheese>tomato)
             return list;
-        int x,y;
-        x=(tomato-(2*cheese))/2;
-        y=cheese-x;
-        tomato=tomato-(4*x+2*y);
-        cheese=cheese-(x+y);
-        if(tomato==0 && cheese==0 && x>=0 && y>=0){
-            list.add(x);
-            list.add(y);
-        }
+        int j,s;
+        j=(tomato-2*cheese)/2;
+        s=cheese-j;
+        if(j<0 || s<0)  return list;
+        list.add(j);
+        list.add(s);
 
         return list;
     }
