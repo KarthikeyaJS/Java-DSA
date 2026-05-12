@@ -12,8 +12,6 @@ class Solution {
                 left++;
             }
         }
-
         return length==Integer.MAX_VALUE?0:length;
-
     }
 }
