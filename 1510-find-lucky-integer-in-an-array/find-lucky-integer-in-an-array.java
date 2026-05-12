@@ -1,14 +1,17 @@
 class Solution {
     public int findLucky(int[] arr) {
-        TreeMap<Integer,Integer> map=new TreeMap<>();
+        HashMap<Integer,Integer> map=new HashMap<>();
         for(int i:arr){
             map.put(i,map.getOrDefault(i,0)+1);
         }
-        int num=-1;
+        int maxi=-1;
         for(Map.Entry<Integer,Integer> entry:map.entrySet()){
-            if(entry.getKey()==entry.getValue())    num=entry.getKey();
+            int x=entry.getKey();
+            int y=entry.getValue();
+            if(x==y){
+                maxi=Math.max(maxi,x);
+            }
         }
-        // System.out.println(map);
-        return num;
+        return maxi;
     }
 }
