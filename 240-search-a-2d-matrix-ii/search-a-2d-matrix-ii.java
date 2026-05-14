@@ -1,33 +1,19 @@
 class Solution {
-    static {
-    Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-        try (FileWriter writer = new FileWriter("display_runtime.txt")) {
-            writer.write("1");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }));
-}
-    static boolean binarySearch(int[] arr,int target){
-        int low=0;
-        int high=arr.length-1;
-        while(low<=high){
-            int mid=low+(high-low)/2;
-            if(arr[mid]==target){
+    public boolean searchMatrix(int[][] mat, int target) {
+        int rows=mat.length;
+        int cols=mat[0].length;
+        int r=0;
+        int c=cols-1;
+        while(r<rows && c>=0){
+            if(mat[r][c]==target){
                 return true;
             }
-            else if(arr[mid]<target){
-                low=mid+1;
+            else if(mat[r][c]>target){
+                c--;
             }
             else{
-                high=mid-1;
+                r++;
             }
-        }
-        return false;
-    }
-    public boolean searchMatrix(int[][] matrix, int target) {
-        for(int[] i:matrix){
-            if(binarySearch(i,target))  return true;
         }
         return false;
     }
