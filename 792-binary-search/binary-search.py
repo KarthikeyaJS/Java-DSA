@@ -4,11 +4,13 @@ class Solution:
         r=len(nums)-1
         while(l<=r):
             mid=(l+r)//2
-            if x==nums[mid]:
-                return mid
-            elif x<nums[mid]:
+            if x<nums[mid]:
                 r=mid-1
-            else:
+            elif x>nums[mid]:
                 l=mid+1
+            else:
+                return mid
+
+
         return -1
         
