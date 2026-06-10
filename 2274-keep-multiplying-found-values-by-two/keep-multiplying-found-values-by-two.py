@@ -17,3 +17,4 @@ class Solution:
         while(self.binary_search(nums,og)):
             og=og*2
         return og
+        
