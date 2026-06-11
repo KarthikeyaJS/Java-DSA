@@ -4,7 +4,7 @@ class Solution:
         for ch in s:
             if ch.isalnum():
                 temp=temp+ch.lower()
-        print(temp)
+
         return temp==temp[::-1]
         
         
